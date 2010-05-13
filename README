@@ -12,17 +12,19 @@ Programm is designed for an azerty keyboard
 ---------------------------------------------------
 Use:
 
-1. Download the files named « dvb-remote-key-editor.py » and « input.h » in a same directory.
+1. Download the files named « dvb-remote-key-editor.py », « input_azerty.h » and « input_qwerty.h » in a same directory.
 
 2. Launch a CLI (command line interface) and enter « $ gksudo python dvb-remote-key-editor.py ».
 
-3. Choose the DVB-T Remote you want by clicking on the buttons or by the menu « Load ».
+3. You can choose the keyboard configuration in the menu "Keyboard" -> QWERTY or AZERTY, depend of your keyboard configuration 
 
-4. Make the changes you want in the keycodes.
+4. Choose the DVB-T Remote you want by clicking on the buttons or in the menu « Load ».
 
-5. Click on « Save changes to kernel module ».
+5. Make the changes you want in the keycodes.
 
-6. Close the programm and write in a CLI to reload the kernel module:
+6. Click on « Save changes to kernel module ».
+
+7. Close the programm and write in a CLI to reload the kernel module:
     $ sudo rmmod name_of_the_kernel_module #(ex: dvb_usb_cinergyT2)
     $ sudo modprobe name_of_the_kernel_module #(ex: dvb_usb_cinergyT2)
 
