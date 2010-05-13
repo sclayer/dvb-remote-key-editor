@@ -386,3 +386,4 @@ if __name__=='__main__':
     ke=[EditorNovaT, EditorCinergyT2, EditorA800, EditorDIBUSB, EditorDTT200U, EditorVP7045]
     KeyEditorGui(ke)
     gtk.main()
+
