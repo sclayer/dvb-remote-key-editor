@@ -143,6 +143,10 @@ class KeyEditorGui:
             <menu action="HelpMenuAction">
                 <menuitem action="InfoAction"/>
             </menu>
+            <menu action="KeyboardMenuAction">
+                <menuitem action="AzertyAction"/>
+                <menuitem action="QwertyAction"/>
+            </menu>
 
         </menubar>
 
@@ -150,7 +154,7 @@ class KeyEditorGui:
 
     def __init__(self, ke):
         self.name = "DVB Remote Editor"
-        self.version = "0.2.7-beta2"
+        self.version = "0.2.7-beta3"
         self.ke = None #ke[0]()
         self.editors = ke
         self.read_linux_keys()
@@ -180,7 +184,11 @@ class KeyEditorGui:
                 ('QuitAction',None,'Quit',None,None,self.quit),
                 ('LoadMenuAction',None,'Load',None,None,None),
                 ('HelpMenuAction',None,'Help',None,None,None),
-                ('InfoAction',None,'Info',None,None,self.info)])
+                ('InfoAction',None,'Info',None,None,self.info),
+                ('KeyboardMenuAction',None,'Keyboard',None,None,None)])
+
+        groupeactions.add_radio_actions([('AzertyAction',None,'AZERTY',None,None,0),
+                ('QwertyAction',None,'QWERTY',None,None,1)],0,self.read_linux_keys)
         
         #instert the actions in the UI manager
         self.gestionui.insert_action_group(groupeactions, 0)
@@ -354,11 +362,13 @@ Needs to be run as root for patching kernel-modules.""" % (self.name, self.versi
             dlg.set_title("Saving failed")
             if dlg.run() == gtk.RESPONSE_CLOSE: dlg.destroy()
 
-    def read_linux_keys(self):
+    def read_linux_keys(self,action=None,current=None,fileop="input_azerty.h"):
         "Reads key codes and names from input.h"
         self.linux_keys = {}
         self.linux_key_table = {}
-        linux = open("input.h")
+        if action is not None: 
+            fileop=("input_azerty.h","input_qwerty.h")[action.get_current_value()]
+        linux = open(fileop)
         keyline = re.compile('^#define KEY_([^\s]+?)\s+(.+)$')
         d = 0
         for line in linux:
