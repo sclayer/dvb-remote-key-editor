@@ -7,7 +7,7 @@ Works by patching the appropriate kernel-modules.
 
 Needs to be run as root for patching kernel-modules.
 
-Programm is designed for an azerty keyboard
+Programm is designed for an azerty and qwerty keyboard
 
 ---------------------------------------------------
 Use:

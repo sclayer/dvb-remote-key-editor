@@ -117,7 +117,7 @@ class EditorVP7045(KeyEditor):
     key, keycode = 0,1
 
 class EditorCinergyT2(KeyEditor):#ok
-    std_keys = std_keys = {1041: 'LEFT', 1042: 'OK', 1053: 'MUTE', 1055: 'CHANNELDOWN', 1096:'STOP', 1026: '1', 1028: '3', 1034: '9', 1030: '5', 1032: '7', 1036: '0', 1051: 'CHANNELUP', 1038: 'SELECT', 1037: 'REFRESH', 1040: 'UP', 1112: 'RECORD', 1044: 'DOWN', 1046: 'INFO', 1048: 'GREEN', 1050: 'BLUE', 1052: 'VOLUMEUP', 1108: 'PREVIOUS', 1054: 'VOLUMEDOWN', 1116: 'NEXT', 1025: 'POWER', 1027: '2', 1088: 'PAUSE', 1029: '4', 1031: '6', 1033: '8', 1043: 'RIGHT', 1100: 'PLAY', 1039: 'EPG', 1049: 'YELLOW', 1035: 'VIDEO', 1045: 'TEXT', 1047: 'RED'}
+    std_keys = {1041: 'LEFT', 1042: 'OK', 1053: 'MUTE', 1055: 'CHANNELDOWN', 1096:'STOP', 1026: '1', 1028: '3', 1034: '9', 1030: '5', 1032: '7', 1036: '0', 1051: 'CHANNELUP', 1038: 'SELECT', 1037: 'REFRESH', 1040: 'UP', 1112: 'RECORD', 1044: 'DOWN', 1046: 'INFO', 1048: 'GREEN', 1050: 'BLUE', 1052: 'VOLUMEUP', 1108: 'PREVIOUS', 1054: 'VOLUMEDOWN', 1116: 'NEXT', 1025: 'POWER', 1027: '2', 1088: 'PAUSE', 1029: '4', 1031: '6', 1033: '8', 1043: 'RIGHT', 1100: 'PLAY', 1039: 'EPG', 1049: 'YELLOW', 1035: 'VIDEO', 1045: 'TEXT', 1047: 'RED'}
     pattern = 0xccd0003 #260
     offset = +60
     name = "Cinergy T2"
@@ -340,7 +340,9 @@ class KeyEditorGui:
 Designed to make changing keycodes for DVB-T Remotes easier.
 Works by patching the appropriate kernel-modules.
 
-Needs to be run as root for patching kernel-modules.""" % (self.name, self.version))
+Needs to be run as root for patching kernel-modules.
+
+Last version <a href='http://github.com/syl86c/dvb-remote-key-editor'>here</a>""" % (self.name, self.version))
         dlg.set_title("About %s" % self.name)
         if dlg.run() == gtk.RESPONSE_CLOSE: dlg.destroy()
 
