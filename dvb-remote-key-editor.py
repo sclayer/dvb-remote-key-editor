@@ -17,16 +17,15 @@ class KeyEditor:
         self.filename = file
         self.file = open(file)
         #self.read_file()
-        #self.file = open(file)
         self.find_offset()
         self.read_table()
         self.file.close()
 
     def read_file(self):
         try:
-            self.log=open("/media/Donnee/telcommande/log.txt","w")
+            self.log=open("log.txt","w")
             self.essai=struct.unpack('@I', self.file.read(4))[0]
-            while self.essai != 123456: 
+            while self.essai != 4294967292: 
                 #print self.essai
                 self.log.write(str(self.essai) + "\n")
                 self.essai=struct.unpack('@I', self.file.read(4))[0]
@@ -47,7 +46,7 @@ class KeyEditor:
         self.data = []
         for i in range(len(self.std_keys)):
             x = struct.unpack(self.struct, self.file.read(self.len))
-            #print x
+           # print x
             self.data.append(x)
             self.table[x[self.key]] = x[self.keycode]
 
@@ -118,8 +117,8 @@ class EditorVP7045(KeyEditor):
 
 class EditorCinergyT2(KeyEditor):#ok
     std_keys = std_keys = {1041: 'LEFT', 1042: 'OK', 1053: 'MUTE', 1055: 'CHANNELDOWN', 1096:'STOP', 1026: '1', 1028: '3', 1034: '9', 1030: '5', 1032: '7', 1036: '0', 1051: 'CHANNELUP', 1038: 'SELECT', 1037: 'REFRESH', 1040: 'UP', 1112: 'RECORD', 1044: 'DOWN', 1046: 'INFO', 1048: 'GREEN', 1050: 'BLUE', 1052: 'VOLUMEUP', 1108: 'PREVIOUS', 1054: 'VOLUMEDOWN', 1116: 'NEXT', 1025: 'POWER', 1027: '2', 1088: 'PAUSE', 1029: '4', 1031: '6', 1033: '8', 1043: 'RIGHT', 1100: 'PLAY', 1039: 'EPG', 1049: 'YELLOW', 1035: 'VIDEO', 1045: 'TEXT', 1047: 'RED'}
-    pattern = 0xccd0003 #260
-    offset = +60
+    pattern = 0xFFFFFFFF 
+    offset = +28
     name = "Cinergy T2"
     struct = '@HI'
     len = 8
@@ -311,7 +310,7 @@ class KeyEditorGui:
             self.boxes[key] = combo
             c += 1 
         self.table.show()
-        self.set_title()
+        self.set_title("Editing...")
       # print self.boxes
 
     def get_index (self,data):
