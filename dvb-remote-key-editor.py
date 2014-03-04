@@ -72,7 +72,7 @@ class EditorNovaT(KeyEditor):
     name = "Hauppauge Win-TV Nova-T USB2"
     struct = '@BBI'
     len = 8
-    filename = "/lib/modules/%s/kernel/drivers/media/dvb/dvb-usb/dvb-usb-nova-t-usb2.ko" 
+    filename = "/lib/modules/%s/kernel/drivers/media/usb/dvb-usb/dvb-usb-nova-t-usb2.ko" 
     key, keycode = 1, 2
     
 class EditorA800(KeyEditor):#ok
@@ -82,7 +82,7 @@ class EditorA800(KeyEditor):#ok
     name = "AVerMedia AverTV DVB-T A800"
     struct = '@HI'
     len = 8
-    filename = "/lib/modules/%s/kernel/drivers/media/dvb/dvb-usb/dvb-usb-a800.ko" 
+    filename = "/lib/modules/%s/kernel/drivers/media/usb/dvb-usb/dvb-usb-a800.ko" 
     key, keycode = 0,1
 
 class EditorDIBUSB(KeyEditor):
@@ -92,7 +92,7 @@ class EditorDIBUSB(KeyEditor):
     name = "Generic dib-usb Driver"
     struct = '@HI'
     len = 8
-    filename = "/lib/modules/%s/kernel/drivers/media/dvb/dvb-usb/dvb-usb-dibusb-common.ko"
+    filename = "/lib/modules/%s/kernel/drivers/media/usb/dvb-usb/dvb-usb-dibusb-common.ko"
     key, keycode = 0,1
 
 class EditorDTT200U(KeyEditor):
@@ -102,7 +102,7 @@ class EditorDTT200U(KeyEditor):
     name = "WideView/Yakumo/Hama/Typhoon/Yuan DVB-T USB2"
     struct = '@HI'
     len = 8
-    filename = "/lib/modules/%s/kernel/drivers/media/dvb/dvb-usb/dvb-usb-dtt200u.ko"
+    filename = "/lib/modules/%s/kernel/drivers/media/usb/dvb-usb/dvb-usb-dtt200u.ko"
     key, keycode = 0,1
 
 class EditorVP7045(KeyEditor):
@@ -112,7 +112,7 @@ class EditorVP7045(KeyEditor):
     name = "TwinhanDTV Alpha/MagicBoxII USB2"
     struct = '@HI'
     len = 8
-    filename = "/lib/modules/%s/kernel/drivers/media/dvb/dvb-usb/dvb-usb-vp7045.ko"
+    filename = "/lib/modules/%s/kernel/drivers/media/usb/dvb-usb/dvb-usb-vp7045.ko"
     key, keycode = 0,1
 
 class EditorCinergyT2(KeyEditor):#ok
@@ -122,7 +122,7 @@ class EditorCinergyT2(KeyEditor):#ok
     name = "Cinergy T2"
     struct = '@HI'
     len = 8
-    filename = "/lib/modules/%s/kernel/drivers/media/dvb/dvb-usb/dvb-usb-cinergyT2.ko"
+    filename = "/lib/modules/%s/kernel/drivers/media/usb/dvb-usb/dvb-usb-cinergyT2.ko"
     key, keycode = 0, 1
 
 #####################
