@@ -7,7 +7,7 @@ Works by patching the appropriate kernel-modules.
 
 Needs to be run as root for patching kernel-modules.
 
-Programm is designed for an azerty and qwerty keyboard
+Program is designed for an azerty or qwerty keyboard
 
 ---------------------------------------------------
 Use:
@@ -24,7 +24,7 @@ Use:
 
 6. Click on « Save changes to kernel module ».
 
-7. Close the programm and write in a CLI to reload the kernel module:
+7. Close the program and write in a CLI to reload the kernel module:
     $ sudo rmmod name_of_the_kernel_module #(ex: dvb_usb_cinergyT2)
     $ sudo modprobe name_of_the_kernel_module #(ex: dvb_usb_cinergyT2)
 
